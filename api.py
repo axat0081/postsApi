@@ -27,4 +27,4 @@ def addOne():
 
 
 if __name__ == '__main__':
-	app.run() #run app on port 8080 in debug mode
+	app.run(threaded=True, port=5000) #run app on port 8080 in debug mode
