@@ -23,7 +23,7 @@ def returnAll():
 def addOne():
 	language = request.get_json()
 	languages.append(language)
-
+	return jsonify({'languages' : languages})
 
 if __name__ == '__main__':
-	app.run(threaded=True, port=5000) 
+	app.run(threaded=True, port=5000)
