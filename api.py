@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request #import objects from the Flask model
 app = Flask(__name__) #define app using Flask
 
-languages = [{'posterName' : 'DevTeam',
+posts = [{'posterName' : 'DevTeam',
               'creationDate' : '12.09.13',
               'message' : 'Hello'}, 
               {'posterName' : 'DevTeam',
@@ -17,13 +17,13 @@ def test():
 
 @app.route('/lang', methods=['GET'])
 def returnAll():
-	return jsonify({'languages' : languages})
+	return jsonify({'posts' : posts})
 
 @app.route('/lang', methods=['POST'])
 def addOne():
-	language = request.get_json()
-	languages.append(language)
-	return jsonify({'languages' : languages})
+	post = request.get_json()
+	posts.append(post)
+	return jsonify({'posts' : posts})
 
 if __name__ == '__main__':
-	app.run(threaded=True, port=5000)
+	app.run(threaded=True, port=5000) 
